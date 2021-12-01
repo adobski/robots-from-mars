@@ -20,5 +20,15 @@ namespace RobotsFromMarsTests
                 .Should()
                 .Be(50);
         }
+
+        [Test]
+        public void Grid_has_a_y_axis_of_50_Test()
+        {
+            var grid = new Grid();
+
+            grid.YMax
+                .Should()
+                .Be(50);
+        }
     }
 }
