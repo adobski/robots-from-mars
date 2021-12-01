@@ -30,5 +30,31 @@ namespace RobotsFromMarsTests
                 .Should()
                 .Be(50);
         }
+
+        [Test]
+        public void Can_add_one_robot_to_the_grid_Test()
+        {
+            var grid = new Grid();
+
+            grid.AddRobot(new Robot());
+
+            grid.Robots.Count
+                .Should()
+                .Be(1);
+        }
+        
+        [Test]
+        public void Can_add_many_robots_to_the_grid_Test()
+        {
+            var grid = new Grid();
+
+            grid.AddRobot(new Robot());
+            grid.AddRobot(new Robot());
+            grid.AddRobot(new Robot());
+
+            grid.Robots.Count
+                .Should()
+                .Be(3);
+        }
     }
 }
