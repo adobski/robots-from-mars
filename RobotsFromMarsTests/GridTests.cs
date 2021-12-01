@@ -1,4 +1,6 @@
+using FluentAssertions;
 using NUnit.Framework;
+using RobotsFromMars;
 
 namespace RobotsFromMarsTests
 {
@@ -10,9 +12,13 @@ namespace RobotsFromMarsTests
         }
 
         [Test]
-        public void Test1()
+        public void Grid_is_has_an_x_axis_of_50_Test()
         {
-            Assert.Pass();
+            var grid = new Grid();
+
+            grid.XMax
+                .Should()
+                .Be(50);
         }
     }
 }
