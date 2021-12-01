@@ -5,12 +5,12 @@ namespace RobotsFromMars
 {
     public class Grid
     {
-        public Grid()
+        public Grid(IList<Robot> robots)
         {
             XMax = 50;
             YMax = 50;
 
-            Robots = new List<Robot>();
+            Robots = robots;
         }
 
         public void AddRobot(Robot robot)
