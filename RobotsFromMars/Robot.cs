@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using RobotsFromMars.Entities;
+using RobotsFromMars.Instructions;
+using System.Collections.Generic;
 
 namespace RobotsFromMars
 {

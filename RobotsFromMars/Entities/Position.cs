@@ -1,4 +1,4 @@
-﻿namespace RobotsFromMars
+﻿namespace RobotsFromMars.Entities
 {
     public class Position
     {

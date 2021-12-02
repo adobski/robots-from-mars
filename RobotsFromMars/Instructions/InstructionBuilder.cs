@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RobotsFromMars
+namespace RobotsFromMars.Instructions
 {
     public class InstructionBuilder : IInstructionBuilder
     {

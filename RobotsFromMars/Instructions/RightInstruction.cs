@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using RobotsFromMars.Entities;
+using System.Collections.Generic;
 
-namespace RobotsFromMars
+namespace RobotsFromMars.Instructions
 {
-    public class LeftInstruction : IInstruction
+    public class RightInstruction : IInstruction
     {
         private readonly IList<string> _orientations;
 
-        public LeftInstruction(IList<string> orientations)
+        public RightInstruction(IList<string> orientations)
         {
             _orientations = orientations;
         }
@@ -20,13 +21,13 @@ namespace RobotsFromMars
 
         private string GetOrientation(Position position)
         {
-            if (position.Orientation == "N")
+            if(position.Orientation == "W")
             {
-                position.Orientation = _orientations[3];
+                position.Orientation = _orientations[0];
             }
             else
             {
-                position.Orientation = _orientations[_orientations.IndexOf(position.Orientation) - 1];
+                position.Orientation = _orientations[_orientations.IndexOf(position.Orientation) + 1];
             }
 
             return position.Orientation;

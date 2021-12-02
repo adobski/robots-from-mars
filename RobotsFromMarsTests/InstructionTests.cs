@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 using RobotsFromMars;
+using RobotsFromMars.Entities;
+using RobotsFromMars.Instructions;
 using System.Collections.Generic;
 
 namespace RobotsFromMarsTests

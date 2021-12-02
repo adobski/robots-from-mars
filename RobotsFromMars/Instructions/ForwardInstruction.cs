@@ -1,4 +1,6 @@
-﻿namespace RobotsFromMars
+﻿using RobotsFromMars.Entities;
+
+namespace RobotsFromMars.Instructions
 {
     public class ForwardInstruction : IInstruction
     {
