@@ -26,7 +26,7 @@ namespace RobotsFromMars
                     _instructions.Add(new RightInstruction(_orientations));
                     break;
                 case "L":
-                    _instructions.Add(new LeftInstruction());
+                    _instructions.Add(new LeftInstruction(_orientations));
                     break;
             }
             

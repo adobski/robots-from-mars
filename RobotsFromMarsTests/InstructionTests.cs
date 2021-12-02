@@ -119,5 +119,65 @@ namespace RobotsFromMarsTests
                 .Should()
                 .Be("N");
         }
+
+        [Test]
+        public void LeftInstruction_moves_to_east_orientation_Test()
+        {
+            var position = new Position(1, 1, "S");
+
+            var orientations = new List<string> { "N", "E", "S", "W" };
+
+            var leftInstruction = new LeftInstruction(orientations);
+            var newPosition = leftInstruction.Move(position);
+
+            newPosition.Orientation
+                .Should()
+                .Be("E");
+        }
+
+        [Test]
+        public void LeftInstruction_moves_to_south_orientation_Test()
+        {
+            var position = new Position(1, 1, "W");
+
+            var orientations = new List<string> { "N", "E", "S", "W" };
+
+            var leftInstruction = new LeftInstruction(orientations);
+            var newPosition = leftInstruction.Move(position);
+
+            newPosition.Orientation
+                .Should()
+                .Be("S");
+        }
+
+        [Test]
+        public void LeftInstruction_moves_to_west_orientation_Test()
+        {
+            var position = new Position(1, 1, "N");
+
+            var orientations = new List<string> { "N", "E", "S", "W" };
+
+            var leftInstruction = new LeftInstruction(orientations);
+            var newPosition = leftInstruction.Move(position);
+
+            newPosition.Orientation
+                .Should()
+                .Be("W");
+        }
+
+        [Test]
+        public void LeftInstruction_moves_to_north_orientation_Test()
+        {
+            var position = new Position(1, 1, "E");
+
+            var orientations = new List<string> { "N", "E", "S", "W" };
+
+            var leftInstruction = new LeftInstruction(orientations);
+            var newPosition = leftInstruction.Move(position);
+
+            newPosition.Orientation
+                .Should()
+                .Be("N");
+        }
     }
 }
