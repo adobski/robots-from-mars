@@ -65,5 +65,30 @@ namespace RobotsFromMarsTests
                 .Should()
                 .Be("5 5 N");
         }
+
+        [Test]
+        public void Can_move_robot_across_the_grid_Test()
+        {
+            var instructionBuilder = new InstructionBuilder(
+                new List<IInstruction>(), 
+                new List<string> { "N", "E", "S", "W" }
+            );
+
+            var robot = new Robot();
+            robot.SetGridPosition(0, 0, "N");
+            _grid.AddRobot(robot);
+
+            _grid.Robots[0]
+                .Output()
+                .Should()
+                .Be("0 0 N");
+
+            _grid.Robots[0].Move(instructionBuilder.Create("FFRFF"));
+
+            _grid.Robots[0]
+                .Output()
+                .Should()
+                .Be("2 2 E");
+        }
     }
 }

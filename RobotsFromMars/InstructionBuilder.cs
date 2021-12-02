@@ -17,17 +17,20 @@ namespace RobotsFromMars
 
         public IEnumerable<IInstruction> Create(string instructions)
         {
-            switch(instructions)
+            foreach(char instruction in instructions)
             {
-                case "F":
-                    _instructions.Add(new ForwardInstruction());
-                    break;
-                case "R":
-                    _instructions.Add(new RightInstruction(_orientations));
-                    break;
-                case "L":
-                    _instructions.Add(new LeftInstruction(_orientations));
-                    break;
+                switch (instruction)
+                {
+                    case 'F':
+                        _instructions.Add(new ForwardInstruction());
+                        break;
+                    case 'R':
+                        _instructions.Add(new RightInstruction(_orientations));
+                        break;
+                    case 'L':
+                        _instructions.Add(new LeftInstruction(_orientations));
+                        break;
+                }
             }
             
             return _instructions;
