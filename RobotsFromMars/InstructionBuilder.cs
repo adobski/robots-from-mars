@@ -5,10 +5,14 @@ namespace RobotsFromMars
     public class InstructionBuilder : IInstructionBuilder
     {
         private IList<IInstruction> _instructions;
+        private IList<string> _orientations;
 
-        public InstructionBuilder(IList<IInstruction> instructions)
+        public InstructionBuilder(
+            IList<IInstruction> instructions,
+            IList<string> orientations)
         {
             _instructions = instructions;
+            _orientations = orientations;
         }
 
         public IEnumerable<IInstruction> Create(string instructions)
@@ -19,7 +23,7 @@ namespace RobotsFromMars
                     _instructions.Add(new ForwardInstruction());
                     break;
                 case "R":
-                    _instructions.Add(new RightInstruction());
+                    _instructions.Add(new RightInstruction(_orientations));
                     break;
                 case "L":
                     _instructions.Add(new LeftInstruction());
